@@ -58,6 +58,8 @@ public class GetApiController {
         return name + " " + email + " " + age;
     }
 
+    // 테스트 주석 시도..!
+
     @GetMapping(path = "query-param03")
     public String queryParam03(UserRequest userRequest) {
         System.out.println(userRequest.getName());
