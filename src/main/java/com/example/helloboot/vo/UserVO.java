@@ -15,7 +15,7 @@ public class UserVO {
     private String name;
     private int age;
 
-    @JsonProperty("phone_number")
+//    @JsonProperty("phone_number")
     private String phoneNumber;
 
     private String address;
