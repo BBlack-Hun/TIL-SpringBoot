@@ -9,6 +9,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StopWatch;
 
 import java.lang.reflect.Method;
 
@@ -21,7 +22,7 @@ public class ParameterAop {
     @Pointcut("execution(* com.example.helloboot.controller..*.*(..))")
     private void cut() {}
 
-    @Before("cut()")
+//    @Before("cut()")
     public void before(JoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         Method method = methodSignature.getMethod();
@@ -33,11 +34,9 @@ public class ParameterAop {
         }
     }
 
-    @AfterReturning(value = "cut()", returning = "returnObj")
+//    @AfterReturning(value = "cut()", returning = "returnObj")
     public void afterReturn(JoinPoint joinPoint, Object returnObj) {
         LOGGER.info("return obj");
-        LOGGER.info(returnObj.toString());
-//        System.out.println(returnObj);
-
+        LOGGER.info((String) returnObj);
     }
 }

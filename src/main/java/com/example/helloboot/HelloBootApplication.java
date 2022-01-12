@@ -13,6 +13,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Base64;
+
 @SpringBootApplication
 public class HelloBootApplication {
 
@@ -63,6 +65,10 @@ public class HelloBootApplication {
         Encoder encoder5 = context.getBean("base64Encode", Encoder.class);
         String result5 = encoder5.encode(url);
         LOGGER.info(result5);
+
+        LOGGER.info("==================================");
+
+        LOGGER.info(Base64.getEncoder().encodeToString("john@gmail.com".getBytes()));
     }
 
 }
