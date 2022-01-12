@@ -1,11 +1,14 @@
 package com.example.helloboot;
 
+import com.example.helloboot.util.Base64Encoder;
+import com.example.helloboot.util.Encoder;
 import com.example.helloboot.vo.UserVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 //@RequiredArgsConstructor
@@ -39,6 +42,7 @@ class HelloBootApplicationTests {
 
         UserVO objectUser = objectMaapper.readValue(text, UserVO.class);
         System.out.println(objectUser);
+
     }
 
 }
