@@ -22,7 +22,7 @@ public class ValidationApiController {
 
     @PostMapping("/user")
     public ResponseEntity user(@Valid @RequestBody VUserVO user, BindingResult bindingResult) {
-
+        System.out.println(bindingResult);
         if(bindingResult.hasErrors()) {
             StringBuilder sb = new StringBuilder();
             bindingResult.getAllErrors().forEach(objectError -> {
@@ -42,9 +42,6 @@ public class ValidationApiController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(sb.toString());
         }
 
-//        LOGGER.info(String.valueOf(user));
-
-        // logic
 
         // Valid로 VO에서 아래를 검증
 //        if (user.getPhoneNumber() == "xxx-xxxx-xxxx") {
